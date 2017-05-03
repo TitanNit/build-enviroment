@@ -8,7 +8,7 @@ PARALLEL_MAKE ?= -j $(NR_CPU)
 
 XSUM ?= md5sum
 DISTRO_TYPE ?= release
-DISTRO ?= openatv
+DISTRO ?= titannit
 ONLINECHECK_URL ?= "http://google.com"
 ONLINECHECK_TIMEOUT ?= 2
 

@@ -36,6 +36,7 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-ax \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-blackbox \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-ceryon \
+	$(CURDIR)/meta-oe-alliance/meta-brands/meta-clap \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-cube \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-dags \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-dinobot \
@@ -49,6 +50,7 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-gigablue \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-ini \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-ixuss \
+	$(CURDIR)/meta-oe-alliance/meta-brands/meta-linkdroid \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-broadmedia \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-odin \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-odroid \
@@ -251,6 +253,12 @@ MACHINEBUILD=lunix34k
 else ifeq ($(MACHINEBUILD),lunix)
 MACHINE=dags73625
 MACHINEBUILD=lunix
+else ifeq ($(MACHINEBUILD),force4)
+MACHINE=dags72604
+MACHINEBUILD=force4
+else ifeq ($(MACHINEBUILD),lunix24k)
+MACHINE=dags72604
+MACHINEBUILD=lunix24k
 
 
 else ifeq ($(MACHINEBUILD),classm)
@@ -437,6 +445,9 @@ MACHINEBUILD=vipercombo
 else ifeq ($(MACHINEBUILD),vipercombohdd)
 MACHINE=ch625dt
 MACHINEBUILD=vipercombohdd
+else ifeq ($(MACHINEBUILD),viperslim)
+MACHINE=yh73625
+MACHINEBUILD=viperslim
 
 
 else ifeq ($(MACHINEBUILD),mutant2400)
@@ -650,6 +661,15 @@ MACHINEBUILD=zgemmah7
 else ifeq ($(MACHINEBUILD),zgemmah6)
 MACHINE=h6
 MACHINEBUILD=zgemmah6
+else ifeq ($(MACHINEBUILD),zgemmah9s)
+MACHINE=h9
+MACHINEBUILD=zgemmah9s
+else ifeq ($(MACHINEBUILD),zgemmah9t)
+MACHINE=h9
+MACHINEBUILD=zgemmah9t
+else ifeq ($(MACHINEBUILD),zgemmah9splus)
+MACHINE=h9
+MACHINEBUILD=zgemmah9splus
 
 
 else ifeq ($(MACHINEBUILD),mbmicro)
@@ -700,6 +720,9 @@ MACHINEBUILD=twinboxlcdci5
 else ifeq ($(MACHINEBUILD),e4hdultra)
 MACHINE=8100s
 MACHINEBUILD=e4hdultra
+else ifeq ($(MACHINEBUILD),protek4k)
+MACHINE=8100s
+MACHINEBUILD=protek4k
 
 
 else ifeq ($(MACHINEBUILD),mbtwinplus)
@@ -821,9 +844,14 @@ else ifeq ($(MACHINEBUILD),beyonwizu4)
 MACHINE=et13000
 MACHINEBUILD=beyonwizu4
 
-
-else ifeq ($(MACHINEBUILD),dinobot4kl)
+else ifeq ($(MACHINEBUILD),anadol4k)
 MACHINE=u5
+MACHINEBUILD=anadol4k
+else ifeq ($(MACHINEBUILD),axashis4kcombo)
+MACHINE=u51
+MACHINEBUILD=axashis4kcombo
+else ifeq ($(MACHINEBUILD),dinobot4kl)
+MACHINE=u51
 MACHINEBUILD=dinobot4kl
 else ifeq ($(MACHINEBUILD),dinobot4k)
 MACHINE=u5
@@ -834,6 +862,19 @@ MACHINEBUILD=mediabox4k
 else ifeq ($(MACHINEBUILD),dinobot4kse)
 MACHINE=u5pvr
 MACHINEBUILD=dinobot4kse
+else ifeq ($(MACHINEBUILD),dinobot4kplus)
+MACHINE=u52
+MACHINEBUILD=dinobot4kplus
+else ifeq ($(MACHINEBUILD),axashis4kcomboplus)
+MACHINE=u52
+MACHINEBUILD=axashis4kcomboplus
+else ifeq ($(MACHINEBUILD),dinobot4kmini)
+MACHINE=u53
+MACHINEBUILD=dinobot4kmini
+
+else ifeq ($(MACHINEBUILD),clap4k)
+MACHINE=cc1
+MACHINEBUILD=clap4k
 
 endif
 

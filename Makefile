@@ -695,6 +695,12 @@ MACHINEBUILD=zgemmai55plus
 else ifeq ($(MACHINEBUILD),zgemmah9combo)
 MACHINE=h9combo
 MACHINEBUILD=zgemmah9combo
+else ifeq ($(MACHINEBUILD),zgemmah9twin)
+MACHINE=h9combo
+MACHINEBUILD=zgemmah9twin
+else ifeq ($(MACHINEBUILD),zgemmah10)
+MACHINE=h10
+MACHINEBUILD=zgemmah10
 
 
 else ifeq ($(MACHINEBUILD),mbmicro)
@@ -858,6 +864,9 @@ MACHINEBUILD=gbue4k
 else ifeq ($(MACHINEBUILD),gbtrio4k)
 MACHINE=gbmv200
 MACHINEBUILD=gbtrio4k
+else ifeq ($(MACHINEBUILD),gbip4k)
+MACHINE=gbmv200
+MACHINEBUILD=gbip4k
 
 else ifeq ($(MACHINEBUILD),xpeedlxcs2)
 MACHINE=ultramini
@@ -871,6 +880,9 @@ MACHINEBUILD=et7x00mini
 else ifeq ($(MACHINEBUILD),gi11000)
 MACHINE=et1x000
 MACHINEBUILD=gi11000
+else ifeq ($(MACHINEBUILD),viper4k51)
+MACHINE=et1x000
+MACHINEBUILD=viper4k51
 else ifeq ($(MACHINEBUILD),beyonwizu4)
 MACHINE=et13000
 MACHINEBUILD=beyonwizu4
@@ -914,6 +926,12 @@ MACHINEBUILD=axashis4kcomboplus
 else ifeq ($(MACHINEBUILD),dinobot4kmini)
 MACHINE=u53
 MACHINEBUILD=dinobot4kmini
+else ifeq ($(MACHINEBUILD),arivacombo)
+MACHINE=u532
+MACHINEBUILD=arivacombo
+else ifeq ($(MACHINEBUILD),arivatwin)
+MACHINE=u533
+MACHINEBUILD=arivatwin
 else ifeq ($(MACHINEBUILD),dinobot4kpro)
 MACHINE=u54
 MACHINEBUILD=dinobot4kpro
@@ -926,9 +944,16 @@ MACHINEBUILD=iziboxone4k
 else ifeq ($(MACHINEBUILD),hitube4k)
 MACHINE=u55
 MACHINEBUILD=hitube4k
+else ifeq ($(MACHINEBUILD),iziboxx3)
+MACHINE=u55
+MACHINEBUILD=iziboxx3
 else ifeq ($(MACHINEBUILD),axashisc4k)
 MACHINE=u56
 MACHINEBUILD=axashisc4k
+else ifeq ($(MACHINEBUILD),dinobot4kelite)
+MACHINE=u56
+MACHINEBUILD=dinobot4kelite
+
 else ifeq ($(MACHINEBUILD),dinoboth265)
 MACHINE=u41
 MACHINEBUILD=dinoboth265
@@ -944,6 +969,12 @@ MACHINEBUILD=spycatminiv2
 else ifeq ($(MACHINEBUILD),iziboxecohd)
 MACHINE=u42
 MACHINEBUILD=iziboxecohd
+else ifeq ($(MACHINEBUILD),jdhdduo)
+MACHINE=u42
+MACHINEBUILD=jdhdduo
+else ifeq ($(MACHINEBUILD),turing)
+MACHINE=u43
+MACHINEBUILD=turing
 
 
 else ifeq ($(MACHINEBUILD),clap4k)
@@ -1061,11 +1092,12 @@ $(TOPDIR)/conf/local.conf: $(DEPDIR)/.local.conf.$(LOCAL_CONF_HASH)
 $(TOPDIR)/conf/site.conf: $(CURDIR)/site.conf
 	@ln -s ../../../../../site.conf $@
 
+OPT_ARCH=native         # Overrideable on the command-line
 $(CURDIR)/site.conf:
 	@echo 'SCONF_VERSION = "1"' >> $@
 	@echo 'BB_NUMBER_THREADS = "$(BB_NUMBER_THREADS)"' >> $@
 	@echo 'PARALLEL_MAKE = "$(PARALLEL_MAKE)"' >> $@
-	@echo 'BUILD_OPTIMIZATION = "-march=native -O2 -pipe"' >> $@
+	@echo 'BUILD_OPTIMIZATION = "-march=$(OPT_ARCH) -O2 -pipe"' >> $@
 	@echo 'DL_DIR = "$(DL_DIR)"' >> $@
 	@echo 'INHERIT += "rm_work"' >> $@
 

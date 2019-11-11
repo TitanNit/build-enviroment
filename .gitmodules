@@ -23,3 +23,6 @@
 [submodule "meta-go"]
 	path = meta-go
 	url = git://github.com/mem/oe-meta-go
+[submodule "meta-qt5"]
+	path = meta-qt5
+	url = git://github.com/oe-mirrors/meta-qt5

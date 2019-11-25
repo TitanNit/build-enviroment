@@ -1,3 +1,4 @@
+
 [submodule "openembedded-core"]
 	path = openembedded-core
 	url = git://git.openembedded.org/openembedded-core
@@ -16,7 +17,7 @@
 	ignore = dirty
 [submodule "meta-oe-alliance"]
 	path = meta-oe-alliance
-	url = git://github.com/titannit/oe-alliance-core.git
+	url = git://github.com/oe-alliance/oe-alliance-core.git
 [submodule "meta-go"]
 	path = meta-go
 	url = git://github.com/mem/oe-meta-go

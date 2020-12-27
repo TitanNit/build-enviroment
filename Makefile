@@ -21,19 +21,6 @@ DEPDIR = $(TOPDIR)/.deps
 MACHINEBUILD = $(MACHINE)
 export MACHINEBUILD
 
-
-METAQT=meta-qt5
-# Use old QT 5.8.0
-ifeq ($(MACHINEBUILD),gbquad4k)
-METAQT=meta-qt5.8
-endif
-ifeq ($(MACHINEBUILD),gbue4k)
-METAQT=meta-qt5.8
-endif
-ifeq ($(MACHINEBUILD),gbx34k)
-METAQT=meta-qt5.8
-endif
-
 BBLAYERS ?= \
 	$(CURDIR)/openembedded-core/meta \
 	$(CURDIR)/meta-openembedded/meta-oe \
@@ -43,7 +30,7 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-openembedded/meta-python \
 	$(CURDIR)/meta-openembedded/meta-webserver \
 	$(CURDIR)/meta-oe-alliance/meta-oe \
-	$(CURDIR)/$(METAQT) \
+	$(CURDIR)/meta-qt5 \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-airdigital \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-amiko \
 	$(CURDIR)/meta-oe-alliance/meta-brands/meta-azbox \
@@ -270,9 +257,6 @@ MACHINEBUILD=lunix34k
 else ifeq ($(MACHINEBUILD),lunix)
 MACHINE=dags73625
 MACHINEBUILD=lunix
-else ifeq ($(MACHINEBUILD),lunixco)
-MACHINE=dags73625
-MACHINEBUILD=lunixco
 else ifeq ($(MACHINEBUILD),force4)
 MACHINE=dags72604
 MACHINEBUILD=force4
@@ -506,9 +490,9 @@ MACHINEBUILD=mutant51
 else ifeq ($(MACHINEBUILD),mutant60)
 MACHINE=hd60
 MACHINEBUILD=mutant60
-else ifeq ($(MACHINEBUILD),ax61)
+else ifeq ($(MACHINEBUILD),mutant61)
 MACHINE=hd61
-MACHINEBUILD=ax61
+MACHINEBUILD=mutant61
 else ifeq ($(MACHINEBUILD),ax51)
 MACHINE=hd51
 MACHINEBUILD=ax51
@@ -714,15 +698,9 @@ MACHINEBUILD=zgemmah9combo
 else ifeq ($(MACHINEBUILD),zgemmah9twin)
 MACHINE=h9combo
 MACHINEBUILD=zgemmah9twin
-else ifeq ($(MACHINEBUILD),zgemmah10combo)
+else ifeq ($(MACHINEBUILD),zgemmah10)
 MACHINE=h10
-MACHINEBUILD=zgemmah10combo
-else ifeq ($(MACHINEBUILD),zgemmah102h)
-MACHINE=h10
-MACHINEBUILD=zgemmah102h
-else ifeq ($(MACHINEBUILD),zgemmah102s)
-MACHINE=h10
-MACHINEBUILD=zgemmah102s
+MACHINEBUILD=zgemmah10
 
 
 else ifeq ($(MACHINEBUILD),mbmicro)
@@ -883,9 +861,6 @@ MACHINEBUILD=gbquad4k
 else ifeq ($(MACHINEBUILD),gbue4k)
 MACHINE=gb7252
 MACHINEBUILD=gbue4k
-else ifeq ($(MACHINEBUILD),gbx34k)
-MACHINE=gb72604
-MACHINEBUILD=gbx34k
 else ifeq ($(MACHINEBUILD),gbtrio4k)
 MACHINE=gbmv200
 MACHINEBUILD=gbtrio4k
